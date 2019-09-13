@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 
 class App extends Component {
@@ -7,7 +7,7 @@ class App extends Component {
     this.timeUntilPirateDay = this.timeUntilPirateDay.bind(this);
 
     this.state = {
-      countdownText : ""
+      countdownText: ""
     };
   }
 
@@ -25,7 +25,7 @@ class App extends Component {
     else {
       // Set the date we're counting down to
       let nextPirateDay;
-      if(currDate.getMonth() > 9 || (currDate.getMonth() === 9 && currDate.getDate() > 16) ) {
+      if (currDate.getMonth() > 9 || (currDate.getMonth() === 9 && currDate.getDate() > 16)) {
         nextPirateDay = "September 16, " + (currDate.getFullYear() + 1) + " 0:0:0";
       } else {
         nextPirateDay = "September 16, " + currDate.getFullYear() + " 0:0:0";
@@ -54,7 +54,7 @@ class App extends Component {
         let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         //this.setState( {seconds : Math.floor(distance % (1000 * 60)) / 1000});
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        this.setState( {countdownText : "...but it's " + days + " day(s), " + hours + " hour(s), " + minutes + " minute(s), and " + seconds + " second(s) until International Talk Like a Pirate Day"});
+        this.setState({countdownText: "...but it's " + days + " day(s), " + hours + " hour(s), " + minutes + " minute(s), and " + seconds + " second(s) until International Talk Like a Pirate Day"});
 
         // If the count down is finished, write some text
         if (distance < 0) {
@@ -63,8 +63,7 @@ class App extends Component {
               <p>It's International Talk Like a Pirate Day!</p>
             </div>
           );
-        }
-        else {
+        } else {
           // Display the result TODO: This isn't getting usefully passed back -- it's just being set in the App render function
           return (
             <div className="countdown">
@@ -84,9 +83,13 @@ class App extends Component {
             Is it time to talk like a pirate?
           </p>
         </header>
-        <div className="App-body">
-          <p className="App-yes">
-            Yes!
+        <div className="App-yes">
+          <p>
+            Aye!
+          </p>
+        </div>
+        <div className="App-countdown">
+          <p>
             {this.state.countdownText}
             {this.timeUntilPirateDay()}
           </p>

@@ -78,15 +78,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-            Is it time to talk like a pirate?
-          </p>
-        </header>
-        <div className="App-yes">
-          <p>
-            Aye!
-          </p>
+        <div className="App-top">
+          <header className="App-header">
+            <p>
+              Is it time to talk like a pirate?
+            </p>
+          </header>
+          <div className="App-yes">
+            <p>
+              Aye!
+            </p>
+          </div>
         </div>
         <div className="App-countdown">
           <p>

@@ -26,9 +26,9 @@ class App extends Component {
       // Set the date we're counting down to
       let nextPirateDay;
       if (currDate.getMonth() > 9 || (currDate.getMonth() === 9 && currDate.getDate() > 16)) {
-        nextPirateDay = "September 16, " + (currDate.getFullYear() + 1) + " 0:0:0";
+        nextPirateDay = "September 19, " + (currDate.getFullYear() + 1) + " 0:0:0";
       } else {
-        nextPirateDay = "September 16, " + currDate.getFullYear() + " 0:0:0";
+        nextPirateDay = "September 19, " + currDate.getFullYear() + " 0:0:0";
       }
       console.log("Next Pirate Day: " + nextPirateDay);
       let countDownDate = new Date(nextPirateDay).getTime();

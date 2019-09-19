@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import pirateShip from './assets/pirateboat.png';
 
 class App extends Component {
   constructor(props) {
@@ -13,19 +14,23 @@ class App extends Component {
 
   timeUntilPirateDay() {
     let currDate = new Date();
+    let currMonth = currDate.getMonth() + 1; //getMonth starts at 0 for January
+    let currDay = currDate.getDate(); //getDay() returns day of the week, rather than day. .getDate returns just the day, not a date.
     //If it's currently September 16th... (International Talk Like a Pirate Day)
-    if (currDate.getMonth() === 9 && currDate.getDay() === 16) {
-      return (
-        <div className="pirateDay">
-          <p>It's International Talk Like a Pirate Day!</p>
-        </div>
-      );
+    console.log("Month: " + currMonth + " Day: " + currDay);
+    if (currMonth === 9 && currDay === 19) {
+        return (
+          <div className="pirateDay">
+            <p>It's International Talk Like a Pirate Day!</p>
+            <img src={pirateShip} className="ship" alt="pirate ship" />
+          </div>
+        );
     }
     //Else give a countdown
     else {
       // Set the date we're counting down to
       let nextPirateDay;
-      if (currDate.getMonth() > 9 || (currDate.getMonth() === 9 && currDate.getDate() > 16)) {
+      if (currMonth > 9 || (currMonth === 9 && currDay > 19)) {
         nextPirateDay = "September 19, " + (currDate.getFullYear() + 1) + " 0:0:0";
       } else {
         nextPirateDay = "September 19, " + currDate.getFullYear() + " 0:0:0";
